@@ -252,7 +252,6 @@ function buildChip(label, kind = "neutral") {
   chip.style.display = "inline-flex";
   chip.style.alignItems = "center";
   chip.style.padding = "6px 10px";
-  chip.style.borderRadius = "999px";
   chip.style.fontSize = "0.9rem";
   chip.style.margin = "4px";
   chip.style.background =
