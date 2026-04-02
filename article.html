@@ -120,17 +120,18 @@
   window.addEventListener("hashchange", loadArticle);
 </script>
 <script>
+  const hash = window.location.hash.replace("#", "");
+
   posthog.capture('article_viewed', {
-    article_id: index,
+    article_id: parseInt(hash, 10),
     article_title: document.getElementById("articleTitle").textContent,
   });
 
   var startTime = Date.now();
 
   setTimeout(function() {
-    const index = parseInt(hash, 10);
     posthog.capture('article_engaged', {
-      article_id: index,
+      article_id: parseInt(hash, 10),
       article_title: document.getElementById("articleTitle").textContent,
       time_on_page: Math.round((Date.now() - startTime) / 1000)
     });
