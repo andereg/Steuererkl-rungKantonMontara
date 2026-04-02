@@ -29,6 +29,7 @@
     <a href="index.html">Startseite</a>
     <a href="themes.html">Themen</a>
     <a href="taxform.html">Steuererklärung</a>
+    <a href="search.html">Suche</a>
   </nav>
 
   <nav class="sub-nav">
@@ -55,16 +56,17 @@
       <h2>Suche</h2>
       <div class="search-box">
         <div class="grid two">
-          <div>
-            <input
-                    type="search"
-                    aria-label="Hauptsuche"
-                    placeholder="Suche"
-                    style="width: 100%; padding: 14px 16px; font-size: 1rem;"
-            >
-          </div>
+          <input
+                  id="mainSearchInput"
+                  type="search"
+                  aria-label="Hauptsuche"
+                  placeholder="Suche"
+                  style="width: 100%; padding: 14px 16px; font-size: 1rem;"
+          >
           <div class="button-row">
-            <button type="button" class="primary-button">Suchen</button>
+            <button type="button" class="primary-button" id="mainSearchButton">
+              Suchen
+            </button>
           </div>
         </div>
       </div>
@@ -73,27 +75,27 @@
     <section id="fokus" class="box">
       <h2>Im Fokus</h2>
       <div class="summary-grid">
-        <a class="summary-card primary" href="#">
+        <a class="summary-card primary" href="article.html#10">
           <span>Wahlen 2026</span>
           <strong>Resultate und Informationen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#17">
           <span>News</span>
           <strong>Aktuelles aus dem Kanton Montara</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#16">
           <span>Leichte Sprache</span>
           <strong>Informationen einfach erklärt</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Regierungsprogramm</span>
           <strong>Montara 2030</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#15">
           <span>E-Services</span>
           <strong>Digitale Angebote</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Verwaltung und Behörden</span>
           <strong>Auf einen Blick</strong>
         </a>
@@ -103,27 +105,27 @@
     <section id="services" class="box">
       <h2>Beliebte Dienstleistungen</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Wohnsitzbestätigung</span>
           <strong>Online bestellen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#6">
           <span>Steuern</span>
           <strong>Fristerstreckung beantragen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Umzug</span>
           <strong>Adressänderung melden</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Stipendien</span>
           <strong>Gesuch einreichen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#20">
           <span>Baubewilligung</span>
           <strong>Informationen und Formulare</strong>
         </a>
-        <a class="summary-card success" href="#">
+        <a class="summary-card success" href="article.html#15">
           <span>Alle E-Services</span>
           <strong>Zum Online-Schalter</strong>
         </a>
@@ -133,74 +135,74 @@
     <section id="themen" class="box">
       <h2>Themen</h2>
       <div class="chip-row">
-        <span class="summary-card">Politik & Behörden</span>
-        <span class="summary-card">Steuern</span>
-        <span class="summary-card">Verkehr</span>
-        <span class="summary-card">Bildung</span>
-        <span class="summary-card">Gesundheit</span>
-        <span class="summary-card">Umwelt & Energie</span>
-        <span class="summary-card">Sicherheit</span>
-        <span class="summary-card">Kultur & Sport</span>
+        <a href="article.html#10" class="summary-card">Politik & Behörden</a>
+        <a href="article.html#6" class="summary-card">Steuern</a>
+        <a href="article.html#9" class="summary-card">Verkehr</a>
+        <a href="article.html#4" class="summary-card">Bildung</a>
+        <a href="article.html#5" class="summary-card">Gesundheit</a>
+        <a href="article.html#1" class="summary-card">Umwelt & Energie</a>
+        <a href="article.html#12" class="summary-card">Sicherheit</a>
+        <a href="article.html#13" class="summary-card">Kultur & Sport</a>
       </div>
     </section>
 
     <section id="news" class="box">
       <h2>News</h2>
       <div class="grid one">
-        <a href="#" class="summary-card">
+        <a href="article.html#12" class="summary-card">
           <span>02. April 2026</span>
           <strong>Notfallplanung Naturgefahren: Kanton und Gemeinden stärken gemeinsam die Vorsorge</strong>
         </a>
 
-        <a href="#" class="summary-card">
+        <a href="article.html#2" class="summary-card">
           <span>02. April 2026</span>
           <strong>Sanierung der Kantonsstrasse zwischen Montara Nord und Seedorf startet im Mai</strong>
         </a>
 
-        <a href="#" class="summary-card">
+        <a href="article.html#17" class="summary-card">
           <span>01. April 2026</span>
           <strong>Kurzmitteilungen des Regierungsrates</strong>
         </a>
 
-        <a href="#" class="summary-card">
+        <a href="article.html#1" class="summary-card">
           <span>31. März 2026</span>
           <strong>Förderprogramm Energie wird für Wohngebäude ausgebaut</strong>
         </a>
 
-        <a href="#" class="summary-card">
+        <a href="article.html#10" class="summary-card">
           <span>29. März 2026</span>
           <strong>Ergebnis der kantonalen Wahlen 2026</strong>
         </a>
 
-        <a href="#" class="summary-card">
+        <a href="article.html#15" class="summary-card">
           <span>27. März 2026</span>
           <strong>Neue digitale Angebote für Unternehmen im Online-Schalter</strong>
         </a>
       </div>
 
       <div class="button-row" style="margin-top: 20px;">
-        <button type="button">News abonnieren</button>
-        <button type="button">RSS-Feed</button>
-        <button type="button" class="primary-button">Weitere News</button>
+        <button type="button" onclick="window.location.href='article.html'">News abonnieren</button>
+        <button type="button" onclick="window.location.href='article.html'">RSS-Feed</button>
+        <button type="button" class="primary-button" onclick="window.location.href='article.html#17'">Weitere News</button>
       </div>
     </section>
 
     <section id="verwaltung" class="box">
       <h2>Verwaltung und Behörden</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html">
           <span>Regierungsrat</span>
           <strong>Mitglieder und Direktionen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#10">
           <span>Parlament</span>
           <strong>Sitzungen und Geschäfte</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#37">
           <span>Gerichte</span>
           <strong>Organisation und Kontakte</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#3">
           <span>Kantonsverwaltung</span>
           <strong>Ämter und Fachstellen</strong>
         </a>
@@ -210,19 +212,19 @@
     <section id="links" class="box">
       <h2>Schnellzugriff</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#37">
           <span>Gesetzessammlung</span>
           <strong>Recht online</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#8">
           <span>Stellen</span>
           <strong>Offene Stellen beim Kanton</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#27">
           <span>Publikationen</span>
           <strong>Berichte und Downloads</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#29">
           <span>Gemeinden</span>
           <strong>Übersicht aller Gemeinden</strong>
         </a>
@@ -241,9 +243,9 @@
         E-Mail: info@montara.ch
       </p>
       <div class="button-row">
-        <button type="button">Kontakt aufnehmen</button>
-        <button type="button">Standorte</button>
-        <button type="button" class="primary-button">Online-Schalter</button>
+        <button type="button" onclick="window.location.href='article.html'">Kontakt aufnehmen</button>
+        <button type="button" onclick="window.location.href='article.html'">Standorte</button>
+        <button type="button" class="primary-button" onclick="window.location.href='article.html#15'">Online-Schalter</button>
       </div>
       <p id="messageBox" class="message-box"></p>
     </section>
@@ -255,5 +257,28 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  function goToSearch() {
+    const input = document.getElementById("mainSearchInput");
+    if (!input) return;
+
+    const value = input.value.trim();
+
+    if (!value) return;
+
+    window.location.href = "search.html?q=" + encodeURIComponent(value);
+  }
+
+  document.getElementById("mainSearchButton")
+          .addEventListener("click", goToSearch);
+
+  document.getElementById("mainSearchInput")
+          .addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              goToSearch();
+            }
+          });
+</script>
 </body>
 </html>

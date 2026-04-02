@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suche – Kanton Montara</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="title-wrap">
+      <div class="badge">
+        <img src="Kanton%20Montara.png" height="50" />
+        Kanton Montara
+      </div>
+      <h1 id="searchTitle">Suche</h1>
+      <p class="subtitle" id="searchSubtitle">
+        Durchsuchen Sie Artikel und Inhalte des Kantons Montara
+      </p>
+    </div>
+    <div class="status-box">
+      <div><strong>Suchbegriff:</strong> <span id="searchQueryText">–</span></div>
+      <div><strong>Treffer:</strong> <span id="resultCount">0</span></div>
+    </div>
+  </header>
+
+  <nav class="top-nav">
+    <a href="index.html">Startseite</a>
+    <a href="themes.html">Themen</a>
+    <a href="taxform.html">Steuererklärung</a>
+    <a href="search.html">Suche</a>
+  </nav>
+
+  <main>
+    <section id="searchBox" class="box intro-box">
+      <h2>Artikel suchen</h2>
+      <div class="grid two">
+        <input
+                id="searchInput"
+                type="search"
+                placeholder="Suchbegriff eingeben"
+                aria-label="Suche"
+        />
+        <div class="button-row">
+          <button type="button" class="primary-button" id="searchButton">Suchen</button>
+        </div>
+      </div>
+      <p id="messageBox" class="message-box"></p>
+    </section>
+
+    <section id="resultsBox" class="box">
+      <h2>Ergebnisse</h2>
+      <div id="resultsContainer" class="summary-grid"></div>
+    </section>
+
+    <section class="box action-box">
+      <div class="button-row">
+        <button type="button" onclick="window.location.href='index.html'">Zur Startseite</button>
+        <button type="button" onclick="window.location.href='themes.html'">Zu den Themen</button>
+        <button type="button" class="primary-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          Nach oben
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Kanton Montara – Suche</p>
+  </footer>
+</div>
+
+<script src="articles.js"></script>
+<script>
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return (params.get(name) || "").trim();
+  }
+
+  function stripHtml(html) {
+    const temp = document.createElement("div");
+    temp.innerHTML = html || "";
+    return temp.textContent || temp.innerText || "";
+  }
+
+  function normalizeText(text) {
+    return (text || "")
+            .toLowerCase()
+            .replace(/\s+/g, " ")
+            .trim();
+  }
+
+  function articleToSearchText(article) {
+    return normalizeText([
+      article.ref,
+      article.title,
+      article.subtitle,
+      article.author,
+      article.date,
+      article.intro ? stripHtml(article.intro) : "",
+      article.content ? stripHtml(article.content) : ""
+    ].join(" "));
+  }
+
+  function getMatchScore(article, query) {
+    const q = normalizeText(query);
+    if (!q) return 0;
+
+    const title = normalizeText(article.title);
+    const subtitle = normalizeText(article.subtitle);
+    const intro = normalizeText(stripHtml(article.intro || ""));
+    const content = normalizeText(stripHtml(article.content || ""));
+    const author = normalizeText(article.author);
+
+    let score = 0;
+
+    if (title.includes(q)) score += 10;
+    if (subtitle.includes(q)) score += 6;
+    if (author.includes(q)) score += 3;
+    if (intro.includes(q)) score += 4;
+    if (content.includes(q)) score += 2;
+
+    const words = q.split(" ").filter(Boolean);
+    for (const word of words) {
+      if (title.includes(word)) score += 3;
+      if (subtitle.includes(word)) score += 2;
+      if (intro.includes(word)) score += 1;
+      if (content.includes(word)) score += 1;
+    }
+
+    return score;
+  }
+
+  function createSnippet(article, query) {
+    const plain = stripHtml((article.intro || "") + " " + (article.content || ""));
+    const text = plain.replace(/\s+/g, " ").trim();
+
+    if (!text) return "";
+
+    const q = normalizeText(query);
+    const lower = text.toLowerCase();
+    const index = lower.indexOf(q);
+
+    if (index === -1) {
+      return text.slice(0, 180) + (text.length > 180 ? " ..." : "");
+    }
+
+    const start = Math.max(0, index - 70);
+    const end = Math.min(text.length, index + q.length + 90);
+    let snippet = text.slice(start, end);
+
+    if (start > 0) snippet = "... " + snippet;
+    if (end < text.length) snippet = snippet + " ...";
+
+    return snippet;
+  }
+
+  function renderResults(results, query) {
+    const container = document.getElementById("resultsContainer");
+    const countEl = document.getElementById("resultCount");
+    const queryTextEl = document.getElementById("searchQueryText");
+    const titleEl = document.getElementById("searchTitle");
+    const messageEl = document.getElementById("messageBox");
+
+    container.innerHTML = "";
+    countEl.textContent = String(results.length);
+    queryTextEl.textContent = query || "–";
+
+    if (!query) {
+      titleEl.textContent = "Suche";
+      messageEl.textContent = "Bitte geben Sie einen Suchbegriff ein.";
+      return;
+    }
+
+    titleEl.textContent = `Suche nach: ${query}`;
+    messageEl.textContent = "";
+
+    if (results.length === 0) {
+      container.innerHTML = `
+        <div class="summary-card">
+          <span>Keine Treffer</span>
+          <strong>Für „${query}“ wurden keine passenden Artikel gefunden.</strong>
+        </div>
+      `;
+      return;
+    }
+
+    results.forEach((article) => {
+      const card = document.createElement("a");
+      card.href = `article.html#${article.ref}`;
+      card.className = "summary-card";
+      card.innerHTML = `
+        <span>${article.date || "Artikel"}${article.author ? " • " + article.author : ""}</span>
+        <strong>${article.title || "Ohne Titel"}</strong>
+        ${article.subtitle ? `<p>${article.subtitle}</p>` : ""}
+        <p>${createSnippet(article, query)}</p>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function searchArticles(query) {
+    if (!window.ARTICLES || !Array.isArray(window.ARTICLES)) {
+      return [];
+    }
+
+    const normalized = normalizeText(query);
+    if (!normalized) return [];
+
+    return window.ARTICLES
+            .map(article => ({
+              article,
+              score: getMatchScore(article, normalized),
+              searchText: articleToSearchText(article)
+            }))
+            .filter(item => item.score > 0 || item.searchText.includes(normalized))
+            .sort((a, b) => b.score - a.score)
+            .map(item => item.article);
+  }
+
+  function runSearchFromUrl() {
+    const query = getQueryParam("q");
+    const input = document.getElementById("searchInput");
+    input.value = query;
+
+    const results = searchArticles(query);
+    renderResults(results, query);
+  }
+
+  function submitSearch() {
+    const input = document.getElementById("searchInput");
+    const value = input.value.trim();
+
+    const url = new URL(window.location.href);
+    if (value) {
+      url.searchParams.set("q", value);
+    } else {
+      url.searchParams.delete("q");
+    }
+
+    window.location.href = url.toString();
+  }
+
+  document.getElementById("searchButton").addEventListener("click", submitSearch);
+
+  document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      submitSearch();
+    }
+  });
+
+  runSearchFromUrl();
+</script>
+</body>
+</html>

@@ -25,6 +25,7 @@
     <a href="index.html">Startseite</a>
     <a href="themes.html">Themen</a>
     <a href="taxform.html">Steuererklärung</a>
+    <a href="search.html">Suche</a>
   </nav>
 
   <nav class="sub-nav">
@@ -44,13 +45,16 @@
       <h2>Suche</h2>
       <div class="grid two">
         <input
+                id="mainSearchInput"
                 type="search"
                 aria-label="Hauptsuche"
                 placeholder="Suche"
                 style="width: 100%; padding: 14px 16px; font-size: 1rem;"
         >
         <div class="button-row">
-          <button type="button" class="primary-button">Suchen</button>
+          <button type="button" class="primary-button" id="mainSearchButton">
+            Suchen
+          </button>
         </div>
       </div>
     </section>
@@ -95,7 +99,7 @@
     <section class="box">
       <h2>Themen von A bis Z</h2>
       <div class="summary-grid">
-        <a class="summary-card primary" href="#">
+        <a class="summary-card primary" href="article.html#16">
           <span>Barrierefreier Zugang</span>
           <strong>Themenübersicht in einfacher Sprache</strong>
         </a>
@@ -105,11 +109,11 @@
     <section id="aktuell" class="box">
       <h2>Aktuell</h2>
       <div class="summary-grid">
-        <a class="summary-card primary" href="#">
+        <a class="summary-card primary" href="article.html#10">
           <span>Im Fokus</span>
           <strong>Kantonale Wahlen 2026</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#17">
           <span>Mitteilung</span>
           <strong>Aktuelle Schwerpunkte aus Regierung und Verwaltung</strong>
         </a>
@@ -119,15 +123,15 @@
     <section id="bauen" class="box">
       <h2>Bauen</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#18">
           <span>Projektübersicht</span>
           <strong>Laufende Bauprojekte</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#19">
           <span>Vorgaben</span>
           <strong>Energievorschriften beim Bauen</strong>
         </a>
-        <a class="summary-card" href="#">
+        <a class="summary-card" href="article.html#20">
           <span>Verfahren</span>
           <strong>Baubewilligungsverfahren</strong>
         </a>
@@ -137,88 +141,86 @@
     <section id="bildung" class="box">
       <h2>Bildung</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>Schulen</span><strong>Volksschule und Sekundarstufe</strong></a>
-        <a class="summary-card" href="#"><span>Ausbildung</span><strong>Berufsbildung und Mittelschulen</strong></a>
-        <a class="summary-card" href="#"><span>Weiterbildung</span><strong>Lernen im Erwachsenenalter</strong></a>
+        <a class="summary-card" href="article.html#4"><span>Schulen</span><strong>Volksschule und Sekundarstufe</strong></a>
+        <a class="summary-card" href="article.html#21"><span>Ausbildung</span><strong>Berufsbildung und Mittelschulen</strong></a>
+        <a class="summary-card" href="article.html#22"><span>Weiterbildung</span><strong>Lernen im Erwachsenenalter</strong></a>
       </div>
     </section>
 
     <section id="digitalisierung" class="box">
       <h2>Digitalisierung</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>E-Government</span><strong>Digitale Verwaltungsleistungen</strong></a>
-        <a class="summary-card" href="#"><span>Online-Zugang</span><strong>Elektronische Schalter und Services</strong></a>
-        <a class="summary-card" href="#"><span>Daten</span><strong>Offene Daten und Transparenz</strong></a>
+        <a class="summary-card" href="article.html#3"><span>E-Government</span><strong>Digitale Verwaltungsleistungen</strong></a>
+        <a class="summary-card" href="article.html#15"><span>Online-Zugang</span><strong>Elektronische Schalter und Services</strong></a>
+        <a class="summary-card" href="article.html#23"><span>Daten</span><strong>Offene Daten und Transparenz</strong></a>
       </div>
     </section>
 
     <section id="energie" class="box">
       <h2>Energie</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>Förderung</span><strong>Energieprogramme für Gebäude</strong></a>
-        <a class="summary-card" href="#"><span>Beratung</span><strong>Energie effizient nutzen</strong></a>
-        <a class="summary-card" href="#"><span>Klimaziele</span><strong>Nachhaltige Entwicklung im Kanton</strong></a>
+        <a class="summary-card" href="article.html#1"><span>Förderung</span><strong>Energieprogramme für Gebäude</strong></a>
+        <a class="summary-card" href="article.html#24"><span>Beratung</span><strong>Energie effizient nutzen</strong></a>
+        <a class="summary-card" href="article.html#25"><span>Klimaziele</span><strong>Nachhaltige Entwicklung im Kanton</strong></a>
       </div>
     </section>
 
     <section id="finanzen" class="box">
       <h2>Finanzen</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>Budget</span><strong>Finanzplanung und Voranschläge</strong></a>
-        <a class="summary-card" href="#"><span>Rechnung</span><strong>Jahresrechnung des Kantons</strong></a>
-        <a class="summary-card" href="#"><span>Steuern</span><strong>Finanzielle Grundlagen und Kennzahlen</strong></a>
+        <a class="summary-card" href="article.html#26"><span>Budget</span><strong>Finanzplanung und Voranschläge</strong></a>
+        <a class="summary-card" href="article.html#27"><span>Rechnung</span><strong>Jahresrechnung des Kantons</strong></a>
+        <a class="summary-card" href="article.html#6"><span>Steuern</span><strong>Finanzielle Grundlagen und Kennzahlen</strong></a>
       </div>
     </section>
 
     <section id="gemeinden" class="box">
       <h2>Gemeinden</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>Zusammenarbeit</span><strong>Kanton und Gemeinden</strong></a>
-        <a class="summary-card" href="#"><span>Organisation</span><strong>Gemeindestrukturen</strong></a>
-        <a class="summary-card" href="#"><span>Unterstützung</span><strong>Fachinformationen für Gemeinden</strong></a>
+        <a class="summary-card" href="article.html#28"><span>Zusammenarbeit</span><strong>Kanton und Gemeinden</strong></a>
+        <a class="summary-card" href="article.html#29"><span>Organisation</span><strong>Gemeindestrukturen</strong></a>
+        <a class="summary-card" href="article.html#30"><span>Unterstützung</span><strong>Fachinformationen für Gemeinden</strong></a>
       </div>
     </section>
 
     <section id="gesundheit" class="box">
       <h2>Gesundheit</h2>
       <div class="summary-grid">
-        <a class="summary-card" href="#"><span>Versorgung</span><strong>Spitäler und Gesundheitsversorgung</strong></a>
-        <a class="summary-card" href="#"><span>Prävention</span><strong>Gesundheitsförderung</strong></a>
-        <a class="summary-card" href="#"><span>Pflege</span><strong>Angebote und Aufsicht</strong></a>
+        <a class="summary-card" href="article.html#31"><span>Versorgung</span><strong>Spitäler und Gesundheitsversorgung</strong></a>
+        <a class="summary-card" href="article.html#5"><span>Prävention</span><strong>Gesundheitsförderung</strong></a>
+        <a class="summary-card" href="article.html#32"><span>Pflege</span><strong>Angebote und Aufsicht</strong></a>
       </div>
     </section>
 
     <section id="gesellschaft" class="box">
       <h2>Gesellschaft</h2>
       <div class="summary-grid">
-        <a id="gleichstellung" class="summary-card" href="#"><span>Gleichstellung</span><strong>Chancengleichheit fördern</strong></a>
-        <a id="integration" class="summary-card" href="#"><span>Integration</span><strong>Zusammenleben und Teilhabe</strong></a>
-        <a id="religion" class="summary-card" href="#"><span>Religion</span><strong>Kirchen und Religionsgemeinschaften</strong></a>
-        <a id="soziales" class="summary-card" href="#"><span>Soziales</span><strong>Unterstützung und soziale Sicherheit</strong></a>
+        <a id="gleichstellung" class="summary-card" href="article.html#33"><span>Gleichstellung</span><strong>Chancengleichheit fördern</strong></a>
+        <a id="integration" class="summary-card" href="article.html#34"><span>Integration</span><strong>Zusammenleben und Teilhabe</strong></a>
+        <a id="religion" class="summary-card" href="article.html#35"><span>Religion</span><strong>Kirchen und Religionsgemeinschaften</strong></a>
+        <a id="soziales" class="summary-card" href="article.html#36"><span>Soziales</span><strong>Unterstützung und soziale Sicherheit</strong></a>
       </div>
     </section>
 
     <section id="weitere" class="box">
       <h2>Weitere Themen</h2>
       <div class="summary-grid">
-        <a id="justiz" class="summary-card" href="#"><span>Justiz</span><strong>Rechtspflege und Verfahren</strong></a>
-        <a id="kultur" class="summary-card" href="#"><span>Kultur</span><strong>Kulturelles Leben und Förderung</strong></a>
-        <a id="politik" class="summary-card" href="#"><span>Politik</span><strong>Wahlen, Abstimmungen und Institutionen</strong></a>
-        <a id="raum" class="summary-card" href="#"><span>Raum</span><strong>Raumplanung und Entwicklung</strong></a>
-        <a id="sicherheit" class="summary-card" href="#"><span>Sicherheit</span><strong>Bevölkerungsschutz und Polizei</strong></a>
-        <a id="umwelt" class="summary-card" href="#"><span>Umwelt</span><strong>Natur, Klima und Ressourcen</strong></a>
-        <a id="verkehr" class="summary-card" href="#"><span>Verkehr</span><strong>Mobilität und Infrastruktur</strong></a>
-        <a id="wirtschaft" class="summary-card success" href="#"><span>Wirtschaft</span><strong>Standort, Innovation und Unternehmen</strong></a>
+        <a id="justiz" class="summary-card" href="article.html#37"><span>Justiz</span><strong>Rechtspflege und Verfahren</strong></a>
+        <a id="kultur" class="summary-card" href="article.html#13"><span>Kultur</span><strong>Kulturelles Leben und Förderung</strong></a>
+        <a id="politik" class="summary-card" href="article.html#10"><span>Politik</span><strong>Wahlen, Abstimmungen und Institutionen</strong></a>
+        <a id="raum" class="summary-card" href="article.html#14"><span>Raum</span><strong>Raumplanung und Entwicklung</strong></a>
+        <a id="sicherheit" class="summary-card" href="article.html#12"><span>Sicherheit</span><strong>Bevölkerungsschutz und Polizei</strong></a>
+        <a id="umwelt" class="summary-card" href="article.html#7"><span>Umwelt</span><strong>Natur, Klima und Ressourcen</strong></a>
+        <a id="verkehr" class="summary-card" href="article.html#9"><span>Verkehr</span><strong>Mobilität und Infrastruktur</strong></a>
+        <a id="wirtschaft" class="summary-card success" href="article.html#11"><span>Wirtschaft</span><strong>Standort, Innovation und Unternehmen</strong></a>
       </div>
     </section>
 
     <section class="box action-box">
       <h2>Schnellzugriff</h2>
-      <div class="button-row">
-        <button type="button">Dienstleistungen</button>
-        <button type="button">Organisation</button>
-        <button type="button" class="primary-button">Zur Startseite</button>
-      </div>
+      <button type="button" onclick="window.location.href='search.html#services'">Dienstleistungen</button>
+      <button type="button" onclick="window.location.href='themes.html#inhalt'">Organisation</button>
+      <button type="button" class="primary-button" onclick="window.location.href='index.html'">Zur Startseite</button>
       <p id="messageBox" class="message-box"></p>
     </section>
   </main>
@@ -229,5 +231,28 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  function goToSearch() {
+    const input = document.getElementById("mainSearchInput");
+    if (!input) return;
+
+    const value = input.value.trim();
+
+    if (!value) return;
+
+    window.location.href = "search.html?q=" + encodeURIComponent(value);
+  }
+
+  document.getElementById("mainSearchButton")
+          .addEventListener("click", goToSearch);
+
+  document.getElementById("mainSearchInput")
+          .addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              goToSearch();
+            }
+          });
+</script>
 </body>
 </html>
