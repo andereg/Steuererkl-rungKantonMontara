@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steuererklärung Kanton Montara</title>
+  <title>Kanton Montara – Startseite</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Matomo -->
-  <script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//46.225.49.241:8082/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '5']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <!-- End Matomo Code -->
 </head>
 <body>
 <div class="page">
@@ -27,810 +12,247 @@
     <div class="title-wrap">
       <div class="badge">
         <img src="Kanton%20Montara.png" height="50" />
-        Steuererklärung Kanton Montara
+        Kanton Montara
       </div>
-      <h1>Steuererklärung online ausfüllen</h1>
+      <h1>Willkommen beim Kanton Montara</h1>
       <p class="subtitle">
-        Füllen Sie jetzt die Steuererklärung für den Kanton Montara aus
+        Offizielle Informationen, Dienstleistungen und aktuelle Hinweise
       </p>
     </div>
     <div class="status-box">
-      <div><strong>Steuerjahr:</strong> 2026</div>
-      <div><strong>Währung:</strong> CHF</div>
-      <div><strong>Status:</strong> <span id="completionText">0%</span> ausgefüllt</div>
+      <div><strong>Öffnungszeiten:</strong> 08:00–12:00 / 13:30–17:00</div>
+      <div><strong>Online-Dienste:</strong> verfügbar</div>
+      <div><strong>Aktuell:</strong> <span id="completionText">6</span> Mitteilungen</div>
     </div>
   </header>
 
   <nav class="top-nav">
-    <a href="#personal">Persönlich</a>
-    <a href="#contact">Kontakt</a>
-    <a href="#family">Familie</a>
-    <a href="#income">Einkommen</a>
-    <a href="#assets">Vermögen</a>
-    <a href="#deductions">Abzüge</a>
-    <a href="#documents">Beilagen</a>
-    <a href="#notes">Bemerkungen</a>
-    <a href="#summary">Zusammenfassung</a>
+    <a href="index.html">Startseite</a>
+    <a href="themes.html">Themen</a>
+    <a href="resources.html">Dienstleistungen</a>
+    <a href="taxform.html">Steuererklärung</a>
+  </nav>
+
+  <nav class="sub-nav">
+    <a href="#suche">Suche</a>
+    <a href="#fokus">Im Fokus</a>
+    <a href="#services">E-Services</a>
+    <a href="#news">News</a>
+    <a href="#themen">Themen</a>
+    <a href="#verwaltung">Verwaltung</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#links">Schnellzugriff</a>
   </nav>
 
   <main>
     <section class="box intro-box">
-      <h2>Hinweis</h2>
       <p>
-        Dieses moderne Online-Formular ermöglicht es Ihnen, Ihre Steuererklärung für den Kanton Montara schnell und einfach auszufüllen. Alle relevanten Informationen zu Ihrer Person, Ihrem Einkommen, Vermögen und möglichen Abzügen können hier eingetragen werden. Am Ende erhalten Sie eine übersichtliche Zusammenfassung Ihrer Angaben, die Sie für die Einreichung bei der Steuerbehörde verwenden können. Bitte füllen Sie alle erforderlichen Felder sorgfältig aus und überprüfen Sie Ihre Angaben vor dem Absenden.
+        Hier finden Sie aktuelle Informationen des Kantons Montara, wichtige Dienstleistungen,
+        den Zugang zu E-Services sowie Neuigkeiten aus Regierung, Verwaltung, Mobilität,
+        Bildung, Sicherheit und Umwelt.
       </p>
     </section>
 
-    <form id="taxForm">
-      <section id="personal" class="box">
-        <h2>1. Persönliche Angaben</h2>
+    <section id="suche" class="box">
+      <h2>Suche</h2>
+      <div class="search-box">
         <div class="grid two">
-          <label>
-            Vorname / Nachname
-            <input type="text" name="fullName" data-required="true" placeholder="Max Muster">
-          </label>
-
-          <label>
-            AHV-Nummer
-            <input type="text" name="ahvNumber" placeholder="756.1234.5678.97">
-          </label>
-
-          <label>
-            Geburtsdatum
-            <input type="date" name="birthDate" data-required="true">
-          </label>
-
-          <label>
-            Staatsangehörigkeit
-            <input type="text" name="nationality" placeholder="Schweiz">
-          </label>
-
-          <label>
-            Steuerjahr
-            <input type="number" name="taxYear" data-required="true" placeholder="2026">
-          </label>
-
-          <label>
-            Kanton
-            <input type="text" name="canton" data-required="true" placeholder="Montara">
-          </label>
-
-          <label>
-            Gemeinde
-            <input type="text" name="municipality" data-required="true" placeholder="Montara Stadt">
-          </label>
-
-          <label>
-            Konfession
-            <select name="religion">
-              <option value="">Bitte wählen</option>
-              <option>römisch-katholisch</option>
-              <option>evangelisch-reformiert</option>
-              <option>andere</option>
-              <option>keine</option>
-            </select>
-          </label>
-
-          <label>
-            Zivilstand
-            <select name="maritalStatus">
-              <option value="">Bitte wählen</option>
-              <option>ledig</option>
-              <option>verheiratet</option>
-              <option>eingetragene Partnerschaft</option>
-              <option>geschieden</option>
-              <option>verwitwet</option>
-              <option>getrennt lebend</option>
-            </select>
-          </label>
-
-          <label>
-            Erwerbsstatus
-            <select name="employmentStatus">
-              <option value="">Bitte wählen</option>
-              <option>angestellt</option>
-              <option>selbständig</option>
-              <option>arbeitslos</option>
-              <option>Student/in</option>
-              <option>pensioniert</option>
-            </select>
-          </label>
-
-          <label>
-            Unbeschränkt steuerpflichtig seit
-            <input type="date" name="taxResidenceSince">
-          </label>
-
-          <label>
-            Quellenbesteuerung
-            <select name="withholdingTax">
-              <option value="">Bitte wählen</option>
-              <option>ja</option>
-              <option>nein</option>
-            </select>
-          </label>
-        </div>
-      </section>
-
-      <section id="contact" class="box">
-        <h2>2. Adresse und Kontakt</h2>
-        <div class="grid two">
-          <label>
-            Strasse / Hausnummer
-            <input type="text" name="street" data-required="true" placeholder="Musterstrasse 10">
-          </label>
-
-          <label>
-            Postleitzahl / Ort
-            <input type="text" name="zipCity" data-required="true" placeholder="8000 Zürich">
-          </label>
-
-          <label>
-            Telefonnummer
-            <input type="tel" name="phone" placeholder="+41 79 123 45 67">
-          </label>
-
-          <label>
-            E-Mail-Adresse
-            <input type="email" name="email" placeholder="max@muster.ch">
-          </label>
-
-          <label>
-            Wohnsitz am 31.12.
-            <input type="text" name="residenceYearEnd" placeholder="Montara Stadt">
-          </label>
-
-          <label>
-            Aufenthaltsbewilligung
-            <select name="permitType">
-              <option value="">Bitte wählen</option>
-              <option>B</option>
-              <option>C</option>
-              <option>L</option>
-              <option>keine / Schweizer Bürgerrecht</option>
-            </select>
-          </label>
-        </div>
-      </section>
-
-      <section id="family" class="box">
-        <h2>3. Haushalt und Familie</h2>
-
-        <div class="subsection">
-          <h3>3.1 Ehepartner / Partner</h3>
-          <div class="grid two">
-            <label>
-              Name Ehepartner / Partner
-              <input type="text" name="partnerName" placeholder="Optional">
-            </label>
-
-            <label>
-              Geburtsdatum Ehepartner / Partner
-              <input type="date" name="partnerBirthDate">
-            </label>
-
-            <label>
-              AHV-Nummer Ehepartner / Partner
-              <input type="text" name="partnerAhvNumber" placeholder="756.xxxx.xxxx.xx">
-            </label>
-
-            <label>
-              Erwerbseinkommen Ehepartner / Partner
-              <div class="money-field">
-                <input type="number" name="partnerIncome" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
+          <div>
+            <input
+                    type="search"
+                    aria-label="Hauptsuche"
+                    placeholder="Suche"
+                    style="width: 100%; padding: 14px 16px; font-size: 1rem;"
+            >
+          </div>
+          <div class="button-row">
+            <button type="button" class="primary-button">Suchen</button>
           </div>
         </div>
-
-        <div class="subsection">
-          <h3>3.2 Kinder</h3>
-          <div class="grid two">
-            <label>
-              Anzahl Kinder im Haushalt
-              <input type="number" name="childrenCount" min="0" placeholder="0">
-            </label>
-
-            <label>
-              Anzahl unterstützter Kinder in Ausbildung
-              <input type="number" name="childrenEducationCount" min="0" placeholder="0">
-            </label>
-
-            <label>
-              Kinderbetreuungskosten
-              <div class="money-field">
-                <input type="number" name="childcareCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Alimente erhalten
-              <div class="money-field">
-                <input type="number" name="alimonyReceived" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Alimente bezahlt
-              <div class="money-field">
-                <input type="number" name="alimonyPaid" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Unterstützungsleistungen an Angehörige
-              <div class="money-field">
-                <input type="number" name="supportPayments" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <section id="income" class="box">
-        <h2>4. Einkommen</h2>
-        <div class="grid two">
-          <label>
-            Jahreslohn
-            <div class="money-field">
-              <input type="number" name="salaryIncome" data-required="true" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Bonus / Gratifikation
-            <div class="money-field">
-              <input type="number" name="bonusIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Nebenerwerb
-            <div class="money-field">
-              <input type="number" name="sideIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Einkommen aus selbständiger Tätigkeit
-            <div class="money-field">
-              <input type="number" name="selfEmploymentIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Arbeitslosenentschädigung
-            <div class="money-field">
-              <input type="number" name="unemploymentIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Renten / Pensionen
-            <div class="money-field">
-              <input type="number" name="pensionIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Vermögenserträge
-            <div class="money-field">
-              <input type="number" name="investmentIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Dividendenerträge
-            <div class="money-field">
-              <input type="number" name="dividendIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Zinserträge
-            <div class="money-field">
-              <input type="number" name="interestIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Mieteinnahmen
-            <div class="money-field">
-              <input type="number" name="rentalIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Andere Einkünfte
-            <div class="money-field">
-              <input type="number" name="otherIncome" placeholder="0">
-              <span>CHF</span>
-            </div>
-          </label>
-
-          <label>
-            Beschreibung andere Einkünfte
-            <input type="text" name="otherIncomeDescription" placeholder="z. B. Honorare, Entschädigungen">
-          </label>
-        </div>
-      </section>
-
-      <section id="assets" class="box">
-        <h2>5. Vermögen und Konten</h2>
-
-        <div class="subsection">
-          <h3>5.1 Bankguthaben</h3>
-          <div class="grid two">
-            <label>
-              Kontostand Bankkonto 1
-              <div class="money-field">
-                <input type="number" name="bankAccount1" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Bank / IBAN Bankkonto 1
-              <input type="text" name="bankAccount1Info" placeholder="z. B. ZKB / CHxx xxxx xxxx xxxx">
-            </label>
-
-            <label>
-              Kontostand Bankkonto 2
-              <div class="money-field">
-                <input type="number" name="bankAccount2" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Bank / IBAN Bankkonto 2
-              <input type="text" name="bankAccount2Info" placeholder="Optional">
-            </label>
-
-            <label>
-              Bargeldbestand
-              <div class="money-field">
-                <input type="number" name="cashAssets" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Kryptowährungen
-              <div class="money-field">
-                <input type="number" name="cryptoAssets" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>5.2 Wertschriften</h3>
-          <div class="grid two">
-            <label>
-              Aktien / ETF / Fonds
-              <div class="money-field">
-                <input type="number" name="securitiesAssets" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Wertschriftenerträge
-              <div class="money-field">
-                <input type="number" name="securitiesIncome" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Depotbank
-              <input type="text" name="depotBank" placeholder="z. B. Swissquote">
-            </label>
-
-            <label>
-              Anzahl Depots
-              <input type="number" name="depotCount" min="0" placeholder="0">
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>5.3 Immobilien</h3>
-          <div class="grid two">
-            <label>
-              Eigentumswohnung / Haus vorhanden
-              <select name="hasProperty">
-                <option value="">Bitte wählen</option>
-                <option>ja</option>
-                <option>nein</option>
-              </select>
-            </label>
-
-            <label>
-              Steuerwert Immobilie
-              <div class="money-field">
-                <input type="number" name="propertyTaxValue" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Eigenmietwert
-              <div class="money-field">
-                <input type="number" name="imputedRentalValue" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Hypothekarschuld
-              <div class="money-field">
-                <input type="number" name="mortgageDebt" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <section id="deductions" class="box">
-        <h2>6. Abzüge</h2>
-
-        <div class="highlight">
-          <label class="switch-line">
-            <input type="checkbox" id="useStandardDeductions">
-            Standardabzüge vorbelegen
-          </label>
-          <p>
-            Übernimmt typische Standardwerte, ähnlich wie in deiner React/TypeScript-Abzugsmaske.
-          </p>
-        </div>
-
-        <div class="subsection">
-          <h3>6.1 Berufskosten</h3>
-          <div class="grid two">
-            <label>
-              Arbeitsweg / Pendelkosten
-              <div class="money-field">
-                <input type="number" name="commutingCosts" data-required="true" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Verpflegung auswärts
-              <div class="money-field">
-                <input type="number" name="mealCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Arbeitszimmer zuhause
-              <div class="money-field">
-                <input type="number" name="homeOfficeCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Weitere Berufskosten
-              <div class="money-field">
-                <input type="number" name="otherProfessionalCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>6.2 Krankenkasse / Gesundheit</h3>
-          <div class="grid two">
-            <label>
-              Krankenkassenprämien
-              <div class="money-field">
-                <input type="number" name="healthInsurancePremiums" data-required="true" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Nicht gedeckte Gesundheitskosten
-              <div class="money-field">
-                <input type="number" name="healthCostsNotCovered" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Zahnarztkosten
-              <div class="money-field">
-                <input type="number" name="dentalCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Pflegekosten
-              <div class="money-field">
-                <input type="number" name="careCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>6.3 Vorsorge</h3>
-          <div class="grid two">
-            <label>
-              Einzahlungen Säule 3a
-              <div class="money-field">
-                <input type="number" name="pillar3aContribution" data-required="true" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Einkäufe Pensionskasse
-              <div class="money-field">
-                <input type="number" name="pensionFundContribution" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>6.4 Weiterbildung</h3>
-          <div class="grid two">
-            <label>
-              Weiterbildungskosten
-              <div class="money-field">
-                <input type="number" name="educationCosts" data-required="true" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Beschreibung
-              <input type="text" name="educationDescription" placeholder="z. B. CAS, Seminar, Fachkurs">
-            </label>
-
-            <label>
-              Fachliteratur
-              <div class="money-field">
-                <input type="number" name="educationBooksCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Reisekosten Weiterbildung
-              <div class="money-field">
-                <input type="number" name="educationTravelCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>6.5 Versicherungen und Zinsen</h3>
-          <div class="grid two">
-            <label>
-              Schuldzinsen
-              <div class="money-field">
-                <input type="number" name="debtInterest" data-required="true" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Weitere schuldenbezogene Kosten
-              <div class="money-field">
-                <input type="number" name="otherDebtCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Lebensversicherungsprämien
-              <div class="money-field">
-                <input type="number" name="lifeInsuranceCosts" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Sparzinsen / Kontoführungsgebühren
-              <div class="money-field">
-                <input type="number" name="bankFees" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3>6.6 Weitere Abzüge</h3>
-          <div class="grid two">
-            <label>
-              Spenden
-              <div class="money-field">
-                <input type="number" name="donations" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Parteibeiträge / Vereinsbeiträge
-              <div class="money-field">
-                <input type="number" name="membershipFees" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Liegenschaftsunterhalt
-              <div class="money-field">
-                <input type="number" name="propertyMaintenance" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-
-            <label>
-              Energiesparende Investitionen
-              <div class="money-field">
-                <input type="number" name="energySavingInvestments" placeholder="0">
-                <span>CHF</span>
-              </div>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <section id="documents" class="box">
-        <h2>7. Beilagen und Nachweise</h2>
-        <div class="grid two">
-          <label class="switch-line">
-            <input type="checkbox" name="salaryStatementAttached">
-            Lohnausweis vorhanden
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="bankStatementsAttached">
-            Bankauszüge vorhanden
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="insuranceCertificatesAttached">
-            Versicherungsnachweise vorhanden
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="pillar3aCertificateAttached">
-            Säule-3a-Bescheinigung vorhanden
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="educationProofAttached">
-            Nachweise Weiterbildung vorhanden
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="donationProofAttached">
-            Spendenbestätigungen vorhanden
-          </label>
-        </div>
-      </section>
-
-      <section id="notes" class="box">
-        <h2>8. Bemerkungen</h2>
-        <div class="grid one">
-          <label>
-            Zusätzliche Hinweise
-            <textarea name="notes" rows="5" placeholder="Optional"></textarea>
-          </label>
-
-          <label>
-            Angaben zu besonderen Lebenssituationen
-            <textarea name="specialCircumstances" rows="4" placeholder="z. B. Umzug, Heirat, Scheidung, Erwerbsunterbruch"></textarea>
-          </label>
-
-          <label class="switch-line">
-            <input type="checkbox" name="confirmAccuracy" data-required="true">
-            Ich bestätige, dass die Angaben vollständig und wahrheitsgetreu sind.
-          </label>
-        </div>
-      </section>
-
-      <section id="summary" class="box">
-        <h2>9. Zusammenfassung</h2>
-
-        <div class="summary-grid">
-          <div class="summary-card">
-            <span>Gesamteinkommen</span>
-            <strong id="totalIncome">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Partner-Einkommen</span>
-            <strong id="partnerIncomeTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Vermögen</span>
-            <strong id="assetsTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Berufskosten</span>
-            <strong id="professionalTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Gesundheit</span>
-            <strong id="healthTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Vorsorge</span>
-            <strong id="pillarTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Weiterbildung</span>
-            <strong id="educationTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Schulden / Versicherungen</span>
-            <strong id="debtTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card">
-            <span>Weitere Abzüge</span>
-            <strong id="otherDeductionTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card primary">
-            <span>Total Abzüge</span>
-            <strong id="deductionTotal">CHF 0</strong>
-          </div>
-          <div class="summary-card success">
-            <span>Geschätztes steuerbares Einkommen</span>
-            <strong id="taxableIncome">CHF 0</strong>
-          </div>
-        </div>
-
-        <div class="chip-row" id="chipRow"></div>
-      </section>
-
-      <section class="box action-box">
-        <div class="button-row">
-          <button type="button" id="saveDraftButton">Entwurf lokal speichern</button>
-          <button type="reset" id="resetButton">Zurücksetzen</button>
-          <button type="submit" class="primary-button">
-            <a href="submittedTaxform.html">Abschliessen</a>
-          </button>
-
-        </div>
-        <p id="messageBox" class="message-box"></p>
-      </section>
-    </form>
+      </div>
+    </section>
+
+    <section id="fokus" class="box">
+      <h2>Im Fokus</h2>
+      <div class="summary-grid">
+        <a class="summary-card primary" href="#">
+          <span>Wahlen 2026</span>
+          <strong>Resultate und Informationen</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>News</span>
+          <strong>Aktuelles aus dem Kanton Montara</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Leichte Sprache</span>
+          <strong>Informationen einfach erklärt</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Regierungsprogramm</span>
+          <strong>Montara 2030</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>E-Services</span>
+          <strong>Digitale Angebote</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Verwaltung und Behörden</span>
+          <strong>Auf einen Blick</strong>
+        </a>
+      </div>
+    </section>
+
+    <section id="services" class="box">
+      <h2>Beliebte Dienstleistungen</h2>
+      <div class="summary-grid">
+        <a class="summary-card" href="#">
+          <span>Wohnsitzbestätigung</span>
+          <strong>Online bestellen</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Steuern</span>
+          <strong>Fristerstreckung beantragen</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Umzug</span>
+          <strong>Adressänderung melden</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Stipendien</span>
+          <strong>Gesuch einreichen</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Baubewilligung</span>
+          <strong>Informationen und Formulare</strong>
+        </a>
+        <a class="summary-card success" href="#">
+          <span>Alle E-Services</span>
+          <strong>Zum Online-Schalter</strong>
+        </a>
+      </div>
+    </section>
+
+    <section id="themen" class="box">
+      <h2>Themen</h2>
+      <div class="chip-row">
+        <span class="summary-card">Politik & Behörden</span>
+        <span class="summary-card">Steuern</span>
+        <span class="summary-card">Verkehr</span>
+        <span class="summary-card">Bildung</span>
+        <span class="summary-card">Gesundheit</span>
+        <span class="summary-card">Umwelt & Energie</span>
+        <span class="summary-card">Sicherheit</span>
+        <span class="summary-card">Kultur & Sport</span>
+      </div>
+    </section>
+
+    <section id="news" class="box">
+      <h2>News</h2>
+      <div class="grid one">
+        <a href="#" class="summary-card">
+          <span>02. April 2026</span>
+          <strong>Notfallplanung Naturgefahren: Kanton und Gemeinden stärken gemeinsam die Vorsorge</strong>
+        </a>
+
+        <a href="#" class="summary-card">
+          <span>02. April 2026</span>
+          <strong>Sanierung der Kantonsstrasse zwischen Montara Nord und Seedorf startet im Mai</strong>
+        </a>
+
+        <a href="#" class="summary-card">
+          <span>01. April 2026</span>
+          <strong>Kurzmitteilungen des Regierungsrates</strong>
+        </a>
+
+        <a href="#" class="summary-card">
+          <span>31. März 2026</span>
+          <strong>Förderprogramm Energie wird für Wohngebäude ausgebaut</strong>
+        </a>
+
+        <a href="#" class="summary-card">
+          <span>29. März 2026</span>
+          <strong>Ergebnis der kantonalen Wahlen 2026</strong>
+        </a>
+
+        <a href="#" class="summary-card">
+          <span>27. März 2026</span>
+          <strong>Neue digitale Angebote für Unternehmen im Online-Schalter</strong>
+        </a>
+      </div>
+
+      <div class="button-row" style="margin-top: 20px;">
+        <button type="button">News abonnieren</button>
+        <button type="button">RSS-Feed</button>
+        <button type="button" class="primary-button">Weitere News</button>
+      </div>
+    </section>
+
+    <section id="verwaltung" class="box">
+      <h2>Verwaltung und Behörden</h2>
+      <div class="summary-grid">
+        <a class="summary-card" href="#">
+          <span>Regierungsrat</span>
+          <strong>Mitglieder und Direktionen</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Parlament</span>
+          <strong>Sitzungen und Geschäfte</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Gerichte</span>
+          <strong>Organisation und Kontakte</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Kantonsverwaltung</span>
+          <strong>Ämter und Fachstellen</strong>
+        </a>
+      </div>
+    </section>
+
+    <section id="links" class="box">
+      <h2>Schnellzugriff</h2>
+      <div class="summary-grid">
+        <a class="summary-card" href="#">
+          <span>Gesetzessammlung</span>
+          <strong>Recht online</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Stellen</span>
+          <strong>Offene Stellen beim Kanton</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Publikationen</span>
+          <strong>Berichte und Downloads</strong>
+        </a>
+        <a class="summary-card" href="#">
+          <span>Gemeinden</span>
+          <strong>Übersicht aller Gemeinden</strong>
+        </a>
+      </div>
+    </section>
+
+    <section id="kontakt" class="box action-box">
+      <h2>Kontakt</h2>
+      <p>
+        Staatskanzlei Kanton Montara<br>
+        Regierungsplatz 1<br>
+        3000 Montara
+      </p>
+      <p>
+        Telefon: +41 31 000 00 00<br>
+        E-Mail: info@montara.ch
+      </p>
+      <div class="button-row">
+        <button type="button">Kontakt aufnehmen</button>
+        <button type="button">Standorte</button>
+        <button type="button" class="primary-button">Online-Schalter</button>
+      </div>
+      <p id="messageBox" class="message-box"></p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Steuererklärung Kanton Montara</p>
+    <p>Kanton Montara – Offizielle Website</p>
   </footer>
 </div>
 

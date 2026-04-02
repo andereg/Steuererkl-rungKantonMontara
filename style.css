@@ -19,6 +19,7 @@ body {
 .site-header,
 .site-footer,
 .top-nav,
+.sub-nav,
 .box {
   border-bottom: 2px solid #5c7a4d;
 }
@@ -67,7 +68,12 @@ h1, h2, h3 {
   padding: 8px 14px;
 }
 
-.top-nav a {
+.sub-nav {
+  background: #e3ddc7;
+  padding: 8px 14px;
+}
+
+.top-nav a, .sub-nav a {
   display: inline-block;
   margin-right: 14px;
   color: #223018;
@@ -75,7 +81,7 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-.top-nav a:hover {
+.top-nav a:hover, .sub-nav a:hover {
   text-decoration: underline;
 }
 
