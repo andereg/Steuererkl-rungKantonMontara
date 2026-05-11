@@ -6,6 +6,23 @@
   <title>Suche – Kanton Montara</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="https://analytics.lucasreitmann.me/script.js" data-website-id="bb085154-e170-4b29-9579-e566ca8c9c13"></script>
+  <script>
+    window.addEventListener("load", function () {
+      var tries = 0;
+      var iv = setInterval(function () {
+        if (window.umami && window.performance) {
+          clearInterval(iv);
+          var t = performance.timing;
+          umami.track("page_load_time", {
+            path: location.pathname,
+            ms: t.loadEventEnd - t.navigationStart,
+          });
+        } else if (++tries > 20) {
+          clearInterval(iv);
+        }
+      }, 100);
+    });
+  </script>
 </head>
 <body>
 <div class="page">
