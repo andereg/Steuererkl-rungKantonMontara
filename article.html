@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Artikel</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="https://analytics.lucasreitmann.me/script.js" data-website-id="bb085154-e170-4b29-9579-e566ca8c9c13"></script>
+  <script defer src="http://10.248.11.106:3000/script.js" data-website-id="de5e1fcc-d96e-495b-abe4-546d4f5be702"></script>
 </head>
 <body>
 <div class="page">
@@ -129,6 +129,30 @@
   });
 
   var startTime = Date.now();
+
+  let reachedBottom = false;
+  let stayedOneMinute = false;
+  let eventSent = false;
+  setTimeout(() => {
+    stayedOneMinute = true;
+    maybeTrackArticleEngaged();
+  }, 60_000);
+  window.addEventListener('scroll', () => {
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    if (scrollBottom >= pageHeight - 10) {
+      reachedBottom = true;
+      maybeTrackArticleEngaged();
+    }
+  });
+  function maybeTrackArticleEngaged() {
+    if (eventSent || !reachedBottom || !stayedOneMinute) return;
+    eventSent = true;
+    umami.track('article_engaged', {
+      action: 'read_full_article',
+      time_on_page_seconds: 60
+    });
+  }
 
   setTimeout(function() {
     posthog.capture('article_engaged', {
