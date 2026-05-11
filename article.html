@@ -128,10 +128,12 @@
     article_title: document.getElementById("articleTitle").textContent,
   });
 
-  window.umami.track('article_engaged', {
-    article_id: parseInt(hash, 10),
-    article_title: document.getElementById("articleTitle").textContent,
-  });
+  setTimeout(() => {
+    window.umami.track('article_viewed', {
+      article_id: parseInt(hash, 10),
+      article_title: document.getElementById("articleTitle").textContent,
+    });
+  }, 2000)
 
   var startTime = Date.now();
 
