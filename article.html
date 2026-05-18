@@ -40,6 +40,39 @@
       <div id="articleContent"></div>
     </section>
 
+    <section class="box contact-box">
+      <h2>Kontaktdaten</h2>
+
+      <div class="contact-grid">
+        <div>
+          <strong>Kantonale Verwaltung Montara</strong><br />
+          Abteilung Bürgerdienste<br />
+          Rathausplatz 14<br />
+          7421 Montara
+        </div>
+
+        <div>
+          <strong>Kontakt</strong><br />
+          Telefon:
+          <a href="tel:+41445832917" id="contactPhone">
+            +41 44 583 29 17
+          </a><br />
+
+          E-Mail:
+          <a href="mailto:kontakt@kanton-montara.ch" id="contactEmail">
+            kontakt@kanton-montara.ch
+          </a>
+        </div>
+
+        <div>
+          <strong>Öffnungszeiten</strong><br />
+          Montag – Freitag: 08:00 – 17:00<br />
+          Samstag: 09:00 – 12:00<br />
+          Sonntag: geschlossen
+        </div>
+      </div>
+    </section>
+
     <section class="box action-box">
       <div class="button-row">
         <button type="button" onclick="history.back()">Zurück</button>
@@ -150,6 +183,25 @@
       time_on_page: Math.round((Date.now() - startTime) / 1000)
     });
   }, 30000); // 30 seconds
+</script>
+<script>
+  document.getElementById("contactEmail").addEventListener("click", function () {
+    umami.track("human_contact_needed", {
+      channel: "email",
+      page: window.location.pathname,
+      demand_type: "tax_registration",
+      page_name: document.title
+    });
+  });
+
+  document.getElementById("contactPhone").addEventListener("click", function () {
+    umami.track("human_contact_needed", {
+      channel: "phone",
+      page: window.location.pathname,
+      demand_type: "tax_registration",
+      page_name: document.title
+    });
+  });
 </script>
 </body>
 </html>

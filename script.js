@@ -428,4 +428,12 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshUI(form);
     showMessage("Formular ist vollständig geprüft und lokal gespeichert.");
   });
+
+  document.addEventListener("pagehide", () => {
+    if (window.umami) {
+      umami.track("page_exit", {
+        page: window.location.pathname
+      });
+    }
+  });
 });
