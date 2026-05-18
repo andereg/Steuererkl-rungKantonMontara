@@ -76,21 +76,45 @@
   // damit der Event auch dann zählt, wenn ein anderer Handler
   // stopPropagation() macht.
   // ------------------------------------------------------------
-  document.addEventListener("click", function (e) {
-    var link = e.target.closest("a");
-    if (!link || !link.href) return;
-    try {
-      var url = new URL(link.href, location.href);
+  document.addEventListener(
+    "click",
+    function (e) {
+      var link = e.target.closest("a");
+      if (!link || !link.href) return;
+      try {
+        var url = new URL(link.href, location.href);
+        if (!window.umami) return;
+        var isInternal = url.hostname === location.hostname;
+        umami.track("link_click", {
+          target: link.href,
+          target_host: url.hostname,
+          from_path: location.pathname,
+          type: isInternal ? "internal" : "external",
+        });
+      } catch (_) {
+        /* ignore malformed URLs (mailto:, tel:, etc.) */
+      }
+    },
+    true,
+  );
+
+  // ------------------------------------------------------------
+  // 4) form_submitted — Conversion-Goal beim Submit
+  // Hookt sich auf jedes <form data-umami-form="..."> Element.
+  // Der Wert von data-umami-form wird als 'form'-Property mitgeschickt.
+  // ------------------------------------------------------------
+  document.addEventListener(
+    "submit",
+    function (e) {
+      var form = e.target;
+      if (!form || !form.matches || !form.matches("form[data-umami-form]"))
+        return;
       if (!window.umami) return;
-      var isInternal = url.hostname === location.hostname;
-      umami.track("link_click", {
-        target: link.href,
-        target_host: url.hostname,
-        from_path: location.pathname,
-        type: isInternal ? "internal" : "external",
+      umami.track("form_submitted", {
+        form: form.dataset.umamiForm,
+        path: location.pathname,
       });
-    } catch (_) {
-      /* ignore malformed URLs (mailto:, tel:, etc.) */
-    }
-  }, true);
+    },
+    true,
+  );
 })();

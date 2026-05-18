@@ -427,5 +427,6 @@ document.addEventListener("DOMContentLoaded", () => {
     saveForm(form);
     refreshUI(form);
     showMessage("Formular ist vollständig geprüft und lokal gespeichert.");
+    window.location.href = "submittedTaxform.html";
   });
 });
