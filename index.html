@@ -286,7 +286,12 @@
   const anonId = params.get("anon_id");
 
   if (anonId && window.umami) {
-    umami.identify(anonId);
+    window.umami.identify(anonId);
+
+    window.umami?.track("partner_redirect_landed", {
+      anon_id: id,
+      source: "alpengrün",
+    });
 
     //replace anonid in url
     const cleanUrl = new URL(window.location.href);
