@@ -1303,5 +1303,33 @@ window.ARTICLES = [
       <a href="article.html#28">Kanton und Gemeinden</a>.
     </p>
   `
+    },
+    {
+        ref: "38",
+        title: "Kanton Alpengrün",
+        subtitle: "Justiz, Zuständigkeiten und Verfahrenswege im Überblick",
+        author: "Justizdirektion Montara",
+        date: "08.05.2026",
+        intro: `
+    <p>
+      Der Kanton Alpengrün dient für die Darstellung von Justiz, Zuständigkeiten und Verfahrenswegen. Er soll die Vielfalt der rechtlichen Abläufe und die Zusammenarbeit zwischen verschiedenen Stellen veranschaulichen.
+    </p>
+  `,
+        content: `
+    <h2>Justiz im Alltag</h2>
+    <p>
+      Fragen der Rechtspflege betreffen nicht nur Gerichte, sondern auch viele
+      Verwaltungsverfahren und die Zusammenarbeit mit spezialisierten Stellen.
+    </p>
+    
+    <a target="_blank" href="" id="crosssite-link"">Portal des Kantons Alpengrün</a>
+
+    <p>
+      Verwandte Artikel:
+      <a href="article.html#20">Baubewilligungsverfahren</a>,
+      <a href="article.html#12">Sicherheitsmassnahmen</a>,
+      <a href="article.html#28">Kanton und Gemeinden</a>.
+    </p>
+  `
     }
 ];

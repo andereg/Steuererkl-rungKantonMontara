@@ -152,8 +152,7 @@
 
   loadArticle();
   window.addEventListener("hashchange", loadArticle);
-</script>
-<script>
+
   const hash = window.location.hash.replace("#", "");
 
   posthog.capture('article_viewed', {
@@ -183,8 +182,7 @@
       time_on_page: Math.round((Date.now() - startTime) / 1000)
     });
   }, 30000); // 30 seconds
-</script>
-<script>
+
   document.getElementById("contactEmail").addEventListener("click", function () {
     umami.track("human_contact_needed", {
       channel: "email",
@@ -201,6 +199,17 @@
       demand_type: "tax_registration",
       page_name: document.title
     });
+  });
+
+  document.querySelector("#crosssite-link").addEventListener("click", function (event) {
+    const id = crypto.randomUUID();
+
+    const link = new URL("http://10.248.11.106:3001");
+    link.searchParams.set("anon_id", id);
+
+    umami.identify(id);
+
+    event.currentTarget.href = link.toString();
   });
 </script>
 </body>

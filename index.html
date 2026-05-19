@@ -281,6 +281,18 @@
               goToSearch();
             }
           });
+
+  const params = new URLSearchParams(window.location.search);
+  const anonId = params.get("anon_id");
+
+  if (anonId && window.umami) {
+    umami.identify(anonId);
+
+    //replace anonid in url
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete("anon_id");
+    history.replaceState({}, "", cleanUrl.toString());
+  }
 </script>
 </body>
 </html>
